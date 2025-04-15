@@ -1,0 +1,301 @@
+﻿:root {
+    --primary-color: #3a86ff;
+    --secondary-color: #8ecae6;
+    --success-color: #38b000;
+    --warning-color: #ffbe0b;
+    --danger-color: #ff006e;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+}
+
+body {
+    background-color: #f0f7ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+    h1:after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: var(--primary-color);
+        border-radius: 2px;
+    }
+
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+    .card:hover {
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        transform: translateY(-3px);
+    }
+
+.card-header {
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-bottom: none;
+}
+
+    .card-header h3 {
+        margin: 0;
+        font-size: 1.3rem;
+    }
+
+    /* Custom card header colors */
+    .card-header.bg-primary {
+        background: linear-gradient(135deg, var(--primary-color), #4361ee) !important;
+    }
+
+    .card-header.bg-secondary {
+        background: linear-gradient(135deg, #4cc9f0, var(--secondary-color)) !important;
+    }
+
+    .card-header.bg-success {
+        background: linear-gradient(135deg, var(--success-color), #57cc99) !important;
+    }
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Form styling */
+.form-control {
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    border: 1px solid #ddd;
+    transition: all 0.2s;
+}
+
+    .form-control:focus {
+        box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.25);
+        border-color: var(--primary-color);
+    }
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #495057;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Button styling */
+.btn {
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+    .btn-primary:hover {
+        background-color: #2a75e8;
+        border-color: #2a75e8;
+    }
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+    .btn-outline-primary:hover {
+        background-color: var(--primary-color);
+    }
+
+.btn-group {
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+    .btn-group .btn {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+/* Table styling */
+.table {
+    margin-bottom: 0;
+}
+
+    .table thead th {
+        background-color: rgba(0, 0, 0, 0.03);
+        border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+        font-weight: 600;
+        color: #495057;
+        padding: 0.75rem 1rem;
+    }
+
+#tasksList tr {
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+    #tasksList tr:hover {
+        background-color: rgba(58, 134, 255, 0.08);
+    }
+
+#tasksList td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+/* Task completed styling */
+.task-completed {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+/* Priority badge styling */
+.priority-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin: 0 auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.priority-1 {
+    background: linear-gradient(135deg, #57cc99, #38b000);
+}
+
+.priority-2 {
+    background: linear-gradient(135deg, #4cc9f0, #4895ef);
+}
+
+.priority-3 {
+    background: linear-gradient(135deg, #ffbe0b, #fb8500);
+    color: var(--dark-color);
+}
+
+.priority-4 {
+    background: linear-gradient(135deg, #fb8500, #f48c06);
+}
+
+.priority-5 {
+    background: linear-gradient(135deg, #ff006e, #ff5400);
+}
+
+/* Badge styling */
+.badge {
+    padding: 0.5em 0.8em;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+/* Pagination styling */
+.pagination {
+    margin-top: 1.5rem;
+}
+
+.page-item:first-child .page-link {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.page-item:last-child .page-link {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.page-link {
+    color: var(--primary-color);
+    border: 1px solid #dee2e6;
+    padding: 0.5rem 0.75rem;
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.page-link:focus {
+    box-shadow: 0 0 0 0.2rem rgba(58, 134, 255, 0.25);
+}
+
+/* Search input styling */
+.input-group .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Alert styling */
+.alert {
+    border-radius: var(--border-radius);
+    padding: 1rem 1.5rem;
+}
+
+/* No tasks message */
+#noTasks {
+    text-align: center;
+    padding: 2rem;
+    color: #6c757d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+        .btn-group .btn {
+            border-radius: var(--border-radius);
+            margin-bottom: 0.5rem;
+        }
+
+    .priority-badge {
+        width: 30px;
+        height: 30px;
+    }
+}
