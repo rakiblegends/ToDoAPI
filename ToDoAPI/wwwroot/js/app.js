@@ -424,4 +424,8 @@ function showLoader() {
 }
 
 function hideLoader() {
-    const loader = document.getElementById('globalLoader
+    const loader = document.getElementById('globalLoader');
+    if (loader) {
+        loader.classList.add('d-none');
+    }
+}
