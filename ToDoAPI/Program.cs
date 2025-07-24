@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TodoAPI.Data;
 using TodoAPI.Repositories;
-using ToDoAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,15 +33,6 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    try
-    {
-        TodoDataSeeder.Initialize(services, 100000);
-    }
-    catch (Exception ex)
-    {
-        var logger = services.GetRequiredService<ILogger<Program>>();
-        logger.LogError(ex, "An error occurred seeding the DB.");
-    }
 }
 
 // Configure the HTTP request pipeline.
